@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		C8E0591020B84DB9000933EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E0590F20B84DB9000933EA /* AppDelegate.swift */; };
-		C8E0591220B84DBA000933EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E0591120B84DBA000933EA /* ViewController.swift */; };
+		C8E0591220B84DBA000933EA /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E0591120B84DBA000933EA /* WeatherViewController.swift */; };
 		C8E0591520B84DBA000933EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8E0591320B84DBA000933EA /* Main.storyboard */; };
 		C8E0591720B84DBA000933EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8E0591620B84DBA000933EA /* Assets.xcassets */; };
 		C8E0591A20B84DBA000933EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8E0591820B84DBA000933EA /* LaunchScreen.storyboard */; };
+		C8E0592620B84EFE000933EA /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8E0592520B84EFE000933EA /* Keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C8E0590C20B84DB9000933EA /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E0590F20B84DB9000933EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C8E0591120B84DBA000933EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C8E0591120B84DBA000933EA /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		C8E0591420B84DBA000933EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8E0591620B84DBA000933EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8E0591920B84DBA000933EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8E0591B20B84DBA000933EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8E0592520B84EFE000933EA /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,47 @@
 		C8E0590E20B84DB9000933EA /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				C8E0590F20B84DB9000933EA /* AppDelegate.swift */,
-				C8E0591120B84DBA000933EA /* ViewController.swift */,
-				C8E0591320B84DBA000933EA /* Main.storyboard */,
+				C8E0592320B84E06000933EA /* View */,
+				C8E0592120B84DFA000933EA /* Model */,
+				C8E0592220B84DFD000933EA /* Controller */,
 				C8E0591620B84DBA000933EA /* Assets.xcassets */,
 				C8E0591820B84DBA000933EA /* LaunchScreen.storyboard */,
-				C8E0591B20B84DBA000933EA /* Info.plist */,
+				C8E0592420B84E46000933EA /* Supporting Files */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		C8E0592120B84DFA000933EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C8E0592220B84DFD000933EA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C8E0591120B84DBA000933EA /* WeatherViewController.swift */,
+				C8E0590F20B84DB9000933EA /* AppDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C8E0592320B84E06000933EA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C8E0591320B84DBA000933EA /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C8E0592420B84E46000933EA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C8E0591B20B84DBA000933EA /* Info.plist */,
+				C8E0592520B84EFE000933EA /* Keys.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8E0592620B84EFE000933EA /* Keys.plist in Resources */,
 				C8E0591A20B84DBA000933EA /* LaunchScreen.storyboard in Resources */,
 				C8E0591720B84DBA000933EA /* Assets.xcassets in Resources */,
 				C8E0591520B84DBA000933EA /* Main.storyboard in Resources */,
@@ -135,7 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8E0591220B84DBA000933EA /* ViewController.swift in Sources */,
+				C8E0591220B84DBA000933EA /* WeatherViewController.swift in Sources */,
 				C8E0591020B84DB9000933EA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,7 +318,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BRUZ42SH8K;
-				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Weather/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -290,7 +326,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.LiroyYarimi.Weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -300,7 +336,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BRUZ42SH8K;
-				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Weather/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,7 +344,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.LiroyYarimi.Weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
