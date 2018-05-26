@@ -36,6 +36,12 @@ class WeatherViewController : UIViewController {
     }
 
     
+    
+    
+    //MARK: - Gets APP_ID value from Keys.plist
+    /***************************************************************/
+    
+    
     //this function update the variable APP_ID
     func updateAPP_ID(){
         if let tempValue = readFromPlist(plistName: "Keys", key: "APP_ID"){
