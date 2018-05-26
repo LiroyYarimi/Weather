@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SVProgressHUD
+
 
 //Write the protocol declaration here:
 protocol ChangeCityDelegate {
@@ -25,6 +27,8 @@ class ChangeCityViewController: UIViewController {
     
     //This is the IBAction that gets called when the user taps on the "Get Weather" button:
     @IBAction func getWeatherPressed(_ sender: AnyObject) {
+        
+        SVProgressHUD.show()
         
         //1 Get the city name the user entered in the text field
         if let cityName = changeCityTextField.text{

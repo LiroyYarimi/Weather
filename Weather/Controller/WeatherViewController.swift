@@ -11,6 +11,7 @@ import CoreLocation //library for GPS
 //this two library to get data from website (cocoapods)
 import Alamofire
 import SwiftyJSON
+import SVProgressHUD
 
 class WeatherViewController: UIViewController, CLLocationManagerDelegate, ChangeCityDelegate {
 
@@ -55,9 +56,11 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
                 
                 let weatherJSON : JSON = JSON(response.result.value!)
                 //print(weatherJSON)
+                SVProgressHUD.dismiss()
                 self.updateWeatherData(json: weatherJSON)
             }
             else {
+                SVProgressHUD.dismiss()
                 print("Error \(String(describing: response.result.error))")
                 self.cityLabel.text = "Connection Issues"
             }
@@ -161,6 +164,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
     
     //restart the app with GPS location (and get update weather)
     @IBAction func refreshButtonPress(_ sender: Any) {
+        SVProgressHUD.show()
         restart()
     }
     
