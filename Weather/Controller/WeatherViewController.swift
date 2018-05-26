@@ -17,7 +17,6 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
     //Constants
     //it write "http" and not "https" because the API don't support SSL (now it do but when we write the code it doesn't)
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather" //we can see it at all the example in the website
-    //let APP_ID = "e72ca729af228beabd5d20e3b7749713" // the orginal app id
     var APP_ID = "" //get it when you log in to the website
 
     //TODO: Declare instance variables here
