@@ -22,7 +22,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
 
     //TODO: Declare instance variables here
     let locationManager = CLLocationManager() //create object from the GPS library
-    let weatherDataModel = WeatherDataModel()
+    var weatherDataModel = WeatherDataModel()
     
     @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!
@@ -32,8 +32,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        //cityLabel.isEnabled = false
         updateAPP_ID()
         print("APP_ID : \(APP_ID)")
         restart()
@@ -55,7 +54,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
                 print("Success! Got the weather data")
                 
                 let weatherJSON : JSON = JSON(response.result.value!)
-                //print(weatherJSON)
+                print(weatherJSON)
                 SVProgressHUD.dismiss()
                 self.updateWeatherData(json: weatherJSON)
             }
@@ -76,12 +75,18 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
         // to read the value of json (weatherJSON) go to jsoneditoronline website.
         // json["main"]["temp"] - this is dectionary read with 2 keys and .double is for get type of double
         
+        
+        
         if let tempResult = json["main"]["temp"].double { //if the temp isn't nil then all the rest isn't nil
             //print(tempResult)
-            weatherDataModel.temperature = Int(tempResult - 273.15)
-            weatherDataModel.city = json["name"].stringValue
-            weatherDataModel.condition = json["weather"][0]["id"].intValue
-            weatherDataModel.weatherIconName = weatherDataModel.updateWeatherIcon(condition: weatherDataModel.condition)
+            
+            let temperature = Int(tempResult - 273.15)
+            let city = (json["name"]).stringValue
+            let condition = json["weather"][0]["id"].intValue
+            let weatherIconName = weatherDataModel.updateWeatherIcon(condition: condition)
+            
+            weatherDataModel = WeatherDataModel(newTemperature: temperature, newCondition: condition, newCity: city, newWeatherIconName: weatherIconName)
+            
             updateUIWithWeatherData()
         }
         else{
@@ -95,9 +100,9 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
     
     
     func updateUIWithWeatherData(){
-        cityLabel.text = weatherDataModel.city
-        temperatureLabel.text = "\(weatherDataModel.temperature)°"
-        weatherIcon.image = UIImage(named: weatherDataModel.weatherIconName)
+        cityLabel.text = weatherDataModel.getCity()
+        temperatureLabel.text = "\(weatherDataModel.getTemperature())°"
+        weatherIcon.image = UIImage(named: weatherDataModel.getWeatherIconName())
     }
     
     
